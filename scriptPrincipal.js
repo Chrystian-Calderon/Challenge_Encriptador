@@ -76,10 +76,25 @@ function enc(){
   mostrar();
   let textoEnc = document.getElementById("mensaje").value;
   let newTextE = "";
-  let rotar = (textoEnc.substring(0, textoEnc.indexOf(" "))).length;
+  let rotar = Math.floor(Math.random()*(8-2+1)+2);
+  let posRotar = Math.floor(Math.random()*(8-2+1)+2);
+  let pos;
+  newTextE += posRotar.toString();
   let cambiarCaracter = 0;
   for(let carct of textoEnc){
     cambiarCaracter = carct.charCodeAt(0);
+    pos = "";
+    for(let r = 0; r < rotar; r++){
+      if(cambiarCaracter % 2 == 0){
+        cambiarCaracter /= 2;
+      } else {
+        pos += r.toString();
+        cambiarCaracter = cambiarCaracter * 3 + 1;
+      }
+    }
+    console.log(pos);
+    console.log(carct + cambiarCaracter);
+    cambiarCaracter = String.fromCharCode(cambiarCaracter);
     console.log(cambiarCaracter);
   }
   console.log(rotar);
