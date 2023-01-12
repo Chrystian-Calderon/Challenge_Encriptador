@@ -1,7 +1,5 @@
 header nav {
-	width: 50%;
-	text-align: center;
-	margin: auto;
+	margin: 0 20px;
 }
 
 
@@ -62,7 +60,7 @@ header input:checked + .slider:before {
 	color: #ffffff;
 }
 
-.dark header {
+.darkMode header {
 	background: #1F1F1F;
 	box-shadow: 5px 0 20px 5px #323232;
 }
@@ -87,4 +85,12 @@ header input:checked + .slider:before {
 .dark .resultadoTexto-conMensaje textarea {
 	background: #000000;
 	color: #ffffff;
+}
+
+.dark img:first-child {
+	display: none;
+}
+
+.dark .resultadoTexto-sinMensaje img:nth-child(2) {
+	display: block;
 }

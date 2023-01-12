@@ -6,45 +6,52 @@
     <title>Desencriptador</title>
     <link rel="stylesheet"  href="reset.css">
     <link rel="stylesheet" href="darkMode/darkMode.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7c7965d1fd.js" crossorigin="anonymous"></script>
     <script src="scriptPrincipal.js"></script>
     <script src="scriptSecundario.js"></script>
   </head>
   <body>
+    <header>
+      <h1>Encriptador</h1>
+      <label id="r82" class="r82">r-82</label>
+      <nav>
+        <label class="switch" >
+          <input type="checkbox">
+          <span class="slider" id="switch"></span>
+        </label>
+      </nav>
+    </header>
     <div class="contenedor" id="body2">
-      <header>
-        <h1>Encriptador</h1>
-        <nav>
-          <label class="switch" >
-            <input type="checkbox">
-            <span class="slider" id="switch"></span>
-          </label>
-          <input type="checkbox" id="r-82" class="r-82 inp">
-          <label for="r-82" id="r-82r" class="r-82 lab">r-82</label>
-        </nav>
-      </header>
       <section class="contenedorTexto">
         <textarea id="mensaje" class="contenedorTexto-mensaje" placeholder="Digite su texto"></textarea>
         <span><i class="fa-solid fa-circle-exclamation"></i>Solo letras minuscúlas y sin acento</span>
         <div class="contenedorTexto-botones">
-          <input type="button" value="Encriptar" onclick="opciones('e');" class="botones-encriptar"><input type="button" value="Desencriptador" onclick="opciones('d');" class="botones-desencriptar">
+          <input type="button" value="Encriptar" onclick="opciones('e');" class="botones-encriptar boton"><input type="button" value="Desencriptador" onclick="opciones('d');" class="botones-desencriptar boton">
         </div>
       </section><section class="resultadoTexto">
         <div class="resultado">
           <div id="sinResultado" class="resultadoTexto-sinMensaje">
             <img src="img/dibujo-Gato.jpg">
+            <img src="img/dibujo-Gatodark.jpg">
             <h3>Ningun mensaje fue encontrado</h3>
             <p>Ingrese el texto que deseas encriptar o desencriptar</p>
           </div>
           <div id="conResultado" class="resultadoTexto-conMensaje" style="display: none;">
             <textarea id="resultado" class="resultadoTexto-resultado"></textarea>
-            <input type="button" value="Copiar" onclick="copiar();" class="botones-copiar">
+            <input type="button" value="Copiar" onclick="copiar();" class="botones-copiar boton">
           </div>
         </div>
       </section>
     </div>
+    <footer>
+      <div class="enlaces">
+        <a href="https://github.com/Chrystian-Calderon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/chrystian-calderon-785651253/"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <p>Hecho por Chrystian Calderon</p>
+    </footer>
     <script src="scriptSecundario.js"></script>
     <script src="darkMode/darkModeJs.js"></script>
   </body>
