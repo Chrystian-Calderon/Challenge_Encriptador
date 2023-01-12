@@ -146,7 +146,6 @@ function des(){
   let textoD = document.getElementById("mensaje").value;
   let rotar = parseInt(textoD.substring(0, 1));
   textoD = textoD.substring(1, textoD.length - 1);
-  console.log(textoD);
   let newTextD = "";
   let continuar = true;
   let uno, dos, tres, cuatro, cinco;
@@ -177,8 +176,6 @@ function des(){
       auxiliar2 = 0;
     }
     pasoContador = cinco.length - 1;
-    console.log("//+");
-    console.log(auxiliar1);
     for(let rot = 1; rot <= rotar; rot++){
       if(pasoContador >= 0){
         auxiliar2 = rotar - (cinco[pasoContador].charCodeAt(0) - 97);
@@ -189,16 +186,10 @@ function des(){
       } else {
         auxiliar1 *= 2;
       }
-      console.log(auxiliar1 + "a");
-      console.log(auxiliar2 + "," + rot);
     }
-    console.log("+//");
-    console.log(auxiliar1);
     newTextD += String.fromCharCode(auxiliar1);
     quitarCadena = (tres.toString()).length + cuatro + 3;
     textoD = textoD.substring(quitarCadena);
-    console.log(quitarCadena);
-    console.log(textoD);
     if(textoD == ""){
       continuar = false;
     }
