@@ -134,6 +134,20 @@ header h1 {
 	margin: 55px 0 0 0;
 }
 
+/*alerta*/
+.alerta {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	background: #D3DFE4;
+	color: #000000;
+	text-align: center;
+}
+
 footer {
 	background: #252530;
 	height: 120px;

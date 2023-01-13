@@ -1,4 +1,4 @@
-var cambioVocales = ['ai', 'enter', 'imes', 'ober', 'ufat'];
+const cambioVocales = ['ai', 'enter', 'imes', 'ober', 'ufat'];
 
 function devolverCadena(letra, tipo){
   let vocales = ['a', 'e', 'i', 'o', 'u'];
@@ -16,15 +16,32 @@ function devolverCadena(letra, tipo){
   return guardar;
 }
 
-function encriptar(){
-  mostrar();
-  let textoE = document.getElementById("mensaje").value;
-  let newTextE = "";
-  for(let letras of textoE){
-    newTextE += devolverCadena(letras, "e");
+function sinMayusculaYacentos(textoCadena){
+  let letraAux = 0;
+  let restriccion = false;
+  for(let l = 0; l < textoCadena.length; l++){
+    letraAux = textoCadena[l].charCodeAt(0);
+    if((letraAux >= 65 && letraAux <= 90) || (letraAux >= 192 && letraAux <= 252)){
+      restriccion = true;
+      break;
+    }
   }
-  document.getElementById("resultado").innerHTML = newTextE;
-  tamanoTextarea();
+  return restriccion;
+}
+
+function encriptar(){
+  let textoE = document.getElementById("mensaje").value;
+  if(!sinMayusculaYacentos(textoE)){
+    mostrar();
+    let newTextE = "";
+    for(let letras of textoE){
+      newTextE += devolverCadena(letras, "e");
+    }
+    document.getElementById("resultado").innerHTML = newTextE;
+    tamanoTextarea();
+  } else {
+    alerta();
+  }
 }
 
 function desencriptar(){
@@ -57,7 +74,6 @@ function copiar(){
 //r-82
 var check = false;
 window.addEventListener('load', function() {
-  console.log('La página ha terminado de cargarse!!');
   document.getElementById("r82").onclick = function(event) {
     if( check == false ){
       check = true;

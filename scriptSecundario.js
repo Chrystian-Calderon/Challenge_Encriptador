@@ -16,3 +16,11 @@ function tamanoTextarea(){
 		textArea.style.height = "200px";
 	}
 }
+
+function alerta(){
+	let mensajeAlerta = document.getElementById("alerta");
+	mensajeAlerta.style.display = "block";
+	setTimeout(function(){
+		mensajeAlerta.style.display = "none";
+	}, 3000);
+}

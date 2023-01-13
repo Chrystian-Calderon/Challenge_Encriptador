@@ -46,12 +46,24 @@ header nav {
 }
 
 header input:checked + .slider {
-    background-color: #FE5C0D;
+    background-color: var(--background);
 }
 
 header input:checked + .slider:before {
   	transform: translateX(100%);
   	box-shadow: inset 15px -4px 0px 15px #ffffff;
+}
+
+.darkMode .slider {
+	background-color: #FE5C0D;
+}
+
+.darkMode .slider:before {
+	background: #FE5C0D;
+}
+
+.darkMode header input:checked + .slider {
+    background-color: #FE5C0D;
 }
 
 /*pagina modo oscuro*/
